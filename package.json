@@ -8,7 +8,7 @@
     "start": "react-native start",
     "test": "jest",
     "lint": "eslint . --ext .js,.jsx,.ts,.tsx",
-    "lint:fix": "eslint . --ext .js,.jsx,.ts,.tsx --fix",
+    "lint:fix": "eslint --fix --ext .js,.jsx,.ts,.tsx",
     "postinstall": "./scripts/post-install.sh"
   },
   "dependencies": {
