@@ -1,8 +1,9 @@
 import React from 'react'
 import {NavigationContainer} from '@react-navigation/native'
 import * as eva from '@eva-design/eva'
-import {Card, Text, ApplicationProvider} from '@ui-kitten/components'
+import {Card, ApplicationProvider} from '@ui-kitten/components'
 import {View, StyleSheet} from 'react-native'
+import CustomForm from './CustomForm'
 
 const App = () => {
   const {containerStyle} = styles
@@ -11,9 +12,7 @@ const App = () => {
     <ApplicationProvider {...eva} theme={eva.light}>
       <NavigationContainer>
         <View style={containerStyle}>
-          <Card>
-            <Text>Some text!</Text>
-          </Card>
+          <CustomForm />
         </View>
       </NavigationContainer>
     </ApplicationProvider>
