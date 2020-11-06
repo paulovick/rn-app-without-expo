@@ -12,6 +12,14 @@ class Form {
     makeAutoObservable(this)
   }
 
+  setName = (name: string) => {
+    this.name = name
+  }
+
+  setSurname = (surname: string) => {
+    this.surname = surname
+  }
+
   clear = () => {
     this.name = ''
     this.surname = ''
@@ -36,14 +44,16 @@ const CustomForm = observer(() => {
   return (
     <View style={containerStyle} testID="custom-font">
       <Input
+        testID="name-input"
         value={form.name}
         label="Name"
-        onChangeText={(text) => (form.name = text)}
+        onChangeText={(text) => form.setName(text)}
       />
       <Input
+        testID="surname-input"
         value={form.surname}
         label="Surname"
-        onChangeText={(text) => (form.surname = text)}
+        onChangeText={(text) => form.setSurname(text)}
       />
 
       {showResults && (
@@ -53,7 +63,11 @@ const CustomForm = observer(() => {
           <Button onPress={onClearPressed}>Clear</Button>
         </>
       )}
-      {!showResults && <Button onPress={onSubmitPressed}>Submit</Button>}
+      {!showResults && (
+        <Button onPress={onSubmitPressed} testID="submit-button">
+          Submit
+        </Button>
+      )}
     </View>
   )
 })
