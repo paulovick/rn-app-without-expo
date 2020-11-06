@@ -34,7 +34,7 @@ const CustomForm = observer(() => {
   const {containerStyle} = styles
 
   return (
-    <View style={containerStyle}>
+    <View style={containerStyle} testID="custom-font">
       <Input
         value={form.name}
         label="Name"
